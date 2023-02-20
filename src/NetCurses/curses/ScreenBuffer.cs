@@ -13,8 +13,11 @@ namespace tw.curses
         internal int X { get; set; }
         internal int Y { get; set; }
 
+        // todo: Fore/backgroundColor....
+
         internal bool CursorVisible { get; set; }
         internal bool IsDirty { get; set; }
+
 
         internal ScreenLine[] Lines { get; set; }
 

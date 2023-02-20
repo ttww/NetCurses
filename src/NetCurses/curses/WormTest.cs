@@ -32,17 +32,6 @@ namespace tw.curses
 
             CursesUtils.DrawBox(c, 1, 1, w, h, '*', Curses.GRAY, Curses.DARK_GRAY);
 
-            //for (int x = 1; x <= w; x++)
-            //{
-            //    c.GotoXY(x, 1); c.Write("*");
-            //    c.GotoXY(x, h); c.Write("*");
-            //}
-            //for (int y = 1; y <= h; y++)
-            //{
-            //    c.GotoXY(1, y); c.Write("*");
-            //    c.GotoXY(w, y); c.Write("*");
-            //}
-
             xp[0] = rnd.Next(2, w - 1);
             yp[0] = rnd.Next(2, h - 1);
 

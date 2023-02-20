@@ -110,7 +110,9 @@ namespace tw.curses
 
         public void ExitCurses() {
             GotoXY(1, Height);
-            Write("\n");
+            Foreground = WHITE; // Todo: Via ScreenBuffer...
+            Background = BLACK;
+            Write("Done\n");
             CursorOn();
             Refresh();
 

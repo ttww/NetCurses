@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace NetCurses
 {
@@ -48,12 +49,19 @@ namespace NetCurses
                 //Console.Write("\u001b[48;5;0m");
                 //Console.Write("ccc");
 
+
                 //c.ReadKey();
+
+                CursesUtils.DrawBox(c, 1, 1, c.Width , c.Height, '.', Curses.RED, Curses.RED);
 
                 WormTest wormTest = new WormTest(c, height: c.Height - 10);
 
+                CursesUtils.DrawBox(c, 2, 11 , c.Width - 2 , c.Height - 11, '#', Curses.DARK_GRAY, Curses.GRAY);
+
                 int i = 0;
                 bool quit = false;
+                
+                // quit = true;
                 while (!quit)
                 {
                     c.GotoXY(6, 7);
@@ -64,9 +72,16 @@ namespace NetCurses
 
                     i++;
                     wormTest.Loop(ref quit);
+
+                    Thread.Sleep(50);
                 }
-                //Console.WriteLine("yyy");
-                //Console.ReadLine();
+
+            }
+            catch (Exception)
+            {
+                if (c != null)
+                    c.ExitCurses();
+                throw;
             }
             finally {
                 if (c != null)
