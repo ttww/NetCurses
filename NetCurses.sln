@@ -5,6 +5,17 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCurses", "src\NetCurses\NetCurses.csproj", "{BDB392BF-3C56-41A6-A4FD-3FDEAA4E35F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63BA6A3F-5DF8-4D26-A8BE-3CB6DFB8E1C4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C5531A86-A25D-44D0-8D2D-DCE0B42746FC}"
+	ProjectSection(SolutionItems) = preProject
+		images\WormFrameTest.png = images\WormFrameTest.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +53,8 @@ Global
 		$6.scope = application/xml
 		$0.XmlFormattingPolicy = $7
 		$7.scope = application/xml
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5531A86-A25D-44D0-8D2D-DCE0B42746FC} = {63BA6A3F-5DF8-4D26-A8BE-3CB6DFB8E1C4}
 	EndGlobalSection
 EndGlobal

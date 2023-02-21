@@ -1,31 +1,29 @@
 ﻿<Properties StartupConfiguration="{BDB392BF-3C56-41A6-A4FD-3FDEAA4E35F5}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.NetCurses PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/NetCurses/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.md">
     <Files>
-      <File FileName="src/NetCurses/Program.cs" Line="38" Column="24" />
-      <File FileName="src/NetCurses/curses/CursesUtils.cs" />
-      <File FileName="src/NetCurses/curses/WormTest.cs" />
-      <File FileName="src/NetCurses/curses/Curses.cs" />
-      <File FileName="src/NetCurses/curses/ScreenBuffer.cs" />
-      <File FileName="src/NetCurses/curses/AnsiOutputDriver.cs" />
-      <File FileName="src/NetCurses/curses/ScreenChar.cs" />
+      <File FileName="src/NetCurses/Program.cs" Line="75" Column="39" />
+      <File FileName="src/NetCurses/curses/CursesUtils.cs" Line="37" Column="68" />
+      <File FileName="src/NetCurses/curses/WormTest.cs" Line="33" Column="50" />
+      <File FileName="src/NetCurses/curses/Curses.cs" Line="61" Column="13" />
+      <File FileName="src/NetCurses/curses/AnsiOutputDriver.cs" Line="55" Column="13" />
+      <File FileName="src/NetCurses/curses/ScreenChar.cs" Line="22" Column="2" />
+      <File FileName="README.md" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NetCurses" expanded="True">
-            <Node name="NetCurses" expanded="True">
-              <Node name="curses" expanded="True" />
-            </Node>
+            <Node name="NetCurses" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.NetCurses PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
 </Properties>
