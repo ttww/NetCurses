@@ -1,4 +1,6 @@
-﻿using tw.curses;
+﻿
+
+using tw.curses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ namespace NetCurses
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             int w = 60;
@@ -18,6 +21,7 @@ namespace NetCurses
 
             try
             {
+
 
                 c = new Curses(w, h, Curses.WHITE, Curses.BLACK);
 
@@ -40,7 +44,6 @@ namespace NetCurses
 
                 //c.ReadKey();
 
-                c.CursorOff();
                 //c.Refresh();
 
                 //Console.Write("aaa");
@@ -52,11 +55,13 @@ namespace NetCurses
 
                 //c.ReadKey();
 
-                CursesUtils.DrawBox(c, 1, 1, c.Width , c.Height, '.', Curses.RED, Curses.RED);
+                c.CursorOff();
+
+                CursesUtils.DrawGrafBox(c, 1, 1, c.Width , c.Height, Curses.RED, Curses.RED);
 
                 WormTest wormTest = new WormTest(c, height: c.Height - 10);
 
-                CursesUtils.DrawBox(c, 2, 11 , c.Width - 2 , c.Height - 11, '#', Curses.DARK_GRAY, Curses.GRAY);
+                CursesUtils.DrawGrafBox(c, 2, 11 , c.Width - 2 , c.Height - 11, Curses.DARK_GRAY, Curses.GRAY);
 
                 int i = 0;
                 bool quit = false;
@@ -67,7 +72,7 @@ namespace NetCurses
                     c.GotoXY(6, 7);
 
                     c.Background = Curses.GREEN;
-                    c.Write($"- {i} -");
+                    c.Write($"- {i} - 😉  ");
                     c.Background = Curses.BLACK;
 
                     i++;

@@ -10,7 +10,7 @@ namespace tw.curses
     {
         internal bool IsDirty { get; set; }
         internal ScreenChar[] Line { get; set; }
-        internal ScreenLine(int width, char initChar, int foregroundColor, int backgroundColor)
+        internal ScreenLine(int width, int initChar, int foregroundColor, int backgroundColor)
         {
             Line = new ScreenChar[width];
             for (int x = 0; x < width; x++)

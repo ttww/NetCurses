@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{BDB392BF-3C56-41A6-A4FD-3FDEAA4E35F5}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.NetCurses PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/NetCurses/Program.cs">
+    <Files>
+      <File FileName="src/NetCurses/Program.cs" Line="38" Column="24" />
+      <File FileName="src/NetCurses/curses/CursesUtils.cs" />
+      <File FileName="src/NetCurses/curses/WormTest.cs" />
+      <File FileName="src/NetCurses/curses/Curses.cs" />
+      <File FileName="src/NetCurses/curses/ScreenBuffer.cs" />
+      <File FileName="src/NetCurses/curses/AnsiOutputDriver.cs" />
+      <File FileName="src/NetCurses/curses/ScreenChar.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NetCurses" expanded="True">
+            <Node name="NetCurses" expanded="True">
+              <Node name="curses" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

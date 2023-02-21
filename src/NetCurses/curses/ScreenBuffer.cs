@@ -21,7 +21,7 @@ namespace tw.curses
 
         internal ScreenLine[] Lines { get; set; }
 
-        internal ScreenBuffer(int width, int height, char initChar, int foreground, int background)
+        internal ScreenBuffer(int width, int height, int initChar, int foreground, int background)
         {
             Width = width;
             Height = height;
@@ -32,7 +32,7 @@ namespace tw.curses
                 Lines[y] = new ScreenLine(width, initChar, foreground, background);
         }
 
-        internal void Write(char c, int foreground, int background)
+        internal void Write(int c, int foreground, int background)
         {
             ScreenLine line = Lines[Y];
             ScreenChar bufChar = line.Line[X];

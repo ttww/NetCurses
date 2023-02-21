@@ -33,6 +33,8 @@ namespace tw.curses
             
             if (Utils.IsWindows) {
 
+                System.Console.OutputEncoding = System.Text.Encoding.UTF8;
+
                 if (cursesOptions.HasFlag(CursesOptions.ResizeScreen))
                 {
                    Console.SetWindowSize(width, height);
@@ -48,29 +50,18 @@ namespace tw.curses
             }
             if (Utils.IsUnix) {
                 Utils.SetupUnixTerminal();
+
+                Console.Write("\u001b%G");
                 if (cursesOptions.HasFlag(CursesOptions.ResizeScreen))
                     Console.Write($"{VT_CSI}8;{height};{width}t");  // Resize Terminal
             }
 
             screen = new ScreenBuffer(
                 width, height,
-                (char)' ',
+                ' ',
                 foregroundColor, backgroundColor);
 
             Console.Write(VT_CLS);
-
-            //Console.Write("Weiss");
-
-            //Console.Write(MapColorAnsi(Curses.RED, false));
-            //Console.Write("Rot");
-
-            //Console.Write(MapColorAnsi(Curses.BLUE, false));
-            //Console.Write("BLAU");
-
-            //Console.Write(MapColorAnsi(Curses.WHITE, false));
-            //Console.Write("Weiss");
-
-            //throw new Exception("Exit....");
         }
 
         public void ExitDriver()
@@ -260,10 +251,11 @@ namespace tw.curses
             return key.KeyChar;
         }
 
-        private void Write(char character)
+        private void Write(int unicode)
         {
             //Console.Write('-');
-            Console.Write(character);
+            Console.Write(Char.ConvertFromUtf32(unicode));
+
             //Console.Write('-');
             screen.X++;
             if (screen.X == screen.Width)

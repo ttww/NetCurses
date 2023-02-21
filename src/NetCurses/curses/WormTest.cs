@@ -30,7 +30,7 @@ namespace tw.curses
             this.w = width == -1 ? c.Width : width;
             this.h = height == -1 ? c.Height : height;
 
-            CursesUtils.DrawBox(c, 1, 1, w, h, '*', Curses.GRAY, Curses.DARK_GRAY);
+            CursesUtils.DrawGrafBox(c, 1, 1, w, h, Curses.GRAY, Curses.DARK_GRAY);
 
             xp[0] = rnd.Next(2, w - 1);
             yp[0] = rnd.Next(2, h - 1);

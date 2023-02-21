@@ -57,8 +57,8 @@ namespace tw.curses
             CursesOptions cursesOptions = CursesOptions.None
             )
         {
-            //if (width < 16)
-            //    throw new ArgumentException("width must be >= 16");
+            if (width < 16)
+                throw new ArgumentException("width must be >= 16");
 
             Width = width;
             Height = height;
@@ -94,17 +94,32 @@ namespace tw.curses
             virtuel.IsDirty = true;
         }
 
+        // From https://stackoverflow.com/a/32141891/3844091:
+        public IEnumerable<int> GetUnicodeCodePoints(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                int unicodeCodePoint = char.ConvertToUtf32(s, i);
+                if (unicodeCodePoint > 0xffff)
+                {
+                    i++;
+                }
+                yield return unicodeCodePoint;
+            }
+        }
+
         public void Write(string s)
         {
 
-            foreach (char c in s)
+
+            foreach (int unicode in GetUnicodeCodePoints(s))
             {
-                if (c == '\n')
+                if (unicode == '\n')
                 {
                     virtuel.NextLine();
                     continue;
                 }
-                virtuel.Write(c, Foreground, Background);
+                virtuel.Write(unicode, Foreground, Background);
             }
         }
 
