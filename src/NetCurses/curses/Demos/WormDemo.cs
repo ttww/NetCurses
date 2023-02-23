@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tw.curses
+namespace tw.curses.Demos
 {
-    internal class WormTest
+    internal class WormDemo
     {
         private const int MAX_LEN = 50;
 
@@ -24,7 +24,7 @@ namespace tw.curses
         private Random rnd = new Random();
         private int dir = 1;
 
-        public WormTest(Curses c, int width = -1, int height = -1)
+        public WormDemo(Curses c, int width = -1, int height = -1)
         {
             this.c = c;
             this.w = width == -1 ? c.Width : width;

@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,20 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="curses\AnsiOutputDriver.cs" />
     <Compile Include="curses\Curses.cs" />
-    <Compile Include="curses\IOutputDriver.cs" />
     <Compile Include="curses\ScreenBuffer.cs" />
     <Compile Include="curses\ScreenChar.cs" />
     <Compile Include="curses\ScreenLine.cs" />
     <Compile Include="curses\Utils.cs" />
-    <Compile Include="curses\WormTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="curses\CursesUtils.cs" />
+    <Compile Include="curses\Demos\WormDemo.cs" />
+    <Compile Include="curses\Demos\BoxDemo.cs" />
+    <Compile Include="curses\Drivers\AnsiOutputDriver.cs" />
+    <Compile Include="curses\Drivers\IOutputDriver.cs" />
+    <Compile Include="curses\Widgets\IWidget.cs" />
+    <Compile Include="curses\Widgets\Widget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="curses\Demos\" />
+    <Folder Include="curses\Drivers\" />
+    <Folder Include="curses\Widgets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using tw.curses.Demos;
 
 namespace NetCurses
 {
@@ -57,9 +58,9 @@ namespace NetCurses
 
                 c.CursorOff();
 
-                CursesUtils.DrawGrafBox(c, 1, 1, c.Width , c.Height, Curses.RED, Curses.RED);
+                //CursesUtils.DrawGrafBox(c, 1, 1, c.Width , c.Height, Curses.RED, Curses.RED);
 
-                WormTest wormTest = new WormTest(c, height: c.Height - 10);
+                WormDemo worm = new WormDemo(c, height: c.Height - 10);
 
                 CursesUtils.DrawGrafBox(c, 2, 11 , c.Width - 2 , c.Height - 11, Curses.DARK_GRAY, Curses.GRAY);
 
@@ -76,7 +77,7 @@ namespace NetCurses
                     c.Background = Curses.BLACK;
 
                     i++;
-                    wormTest.Loop(ref quit);
+                    worm.Loop(ref quit);
 
                     Thread.Sleep(50);
                 }

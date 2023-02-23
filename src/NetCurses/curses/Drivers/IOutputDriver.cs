@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tw.curses
+namespace tw.curses.Drivers
 {
     internal interface IOutputDriver
     {

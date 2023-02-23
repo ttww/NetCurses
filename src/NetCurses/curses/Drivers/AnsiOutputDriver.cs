@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static tw.curses.Curses;
 
-namespace tw.curses
+namespace tw.curses.Drivers
 {
     internal class AnsiOutputDriver : IOutputDriver
     {
