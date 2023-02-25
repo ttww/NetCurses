@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tw.curses.Drivers;
+using tw.curses.Widgets;
 
 namespace tw.curses
 {
-    public class Curses
+    public class Curses : Widget
     {
         private const bool DIRECT_MODE = true;
 
-        public int Width { get; internal set; }
-        public int Height { get; internal set; }
+        //public int Width { get; internal set; }
+        //public int Height { get; internal set; }
         public int Foreground { get; internal set; } = WHITE;
         public int Background { get; internal set; } = BLACK;
 
@@ -196,6 +197,18 @@ namespace tw.curses
             statePointer--;
             Foreground = foregroundStack[statePointer];
             Background = backgroundStack[statePointer];
+        }
+
+        public void DrawAll()
+        {
+            foreach (IWidget widget in Children)
+            {
+                widget.Draw(this);
+            }
+        }
+        public override void Draw(Curses curses)
+        {
+            DrawAll();
         }
     }
 }

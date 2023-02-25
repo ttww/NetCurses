@@ -59,6 +59,8 @@
     <Compile Include="curses\Drivers\IOutputDriver.cs" />
     <Compile Include="curses\Widgets\IWidget.cs" />
     <Compile Include="curses\Widgets\Widget.cs" />
+    <Compile Include="curses\Widgets\BoxWidget.cs" />
+    <Compile Include="curses\Widgets\RootWidget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

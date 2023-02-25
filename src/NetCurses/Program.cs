@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using tw.curses.Demos;
+using tw.curses.Widgets;
 
 namespace NetCurses
 {
@@ -62,7 +63,20 @@ namespace NetCurses
 
                 WormDemo worm = new WormDemo(c, height: c.Height - 10);
 
-                CursesUtils.DrawGrafBox(c, 2, 11 , c.Width - 2 , c.Height - 11, Curses.DARK_GRAY, Curses.GRAY);
+
+                c.AddChild(
+                    new BoxWidget()
+                    {
+                        X = 13,
+                        Y = 1,
+                        Width = 40,
+                        Height = 4,
+                        ForegroundColor = Curses.YELLOW,
+                        BackgroundColor = Curses.GRAY,
+                    }
+                );
+                
+//                CursesUtils.DrawGrafBox(c, 2, 11 , c.Width - 2 , c.Height - 11, Curses.DARK_GRAY, Curses.GRAY);
 
                 int i = 0;
                 bool quit = false;
@@ -80,6 +94,8 @@ namespace NetCurses
                     worm.Loop(ref quit);
 
                     Thread.Sleep(50);
+
+                    c.DrawAll();
                 }
 
             }

@@ -6,13 +6,15 @@ namespace tw.curses.Widgets
     abstract public class Widget : IWidget
 	{
         public List<IWidget> Children { get; } = new List<IWidget>();
+        public IWidget Parent { get; set; }
+        public bool IsDirty { get; set; }
+        public int ForegroundColor { get; set; }
+        public int BackgroundColor { get; set; }
 
-        IWidget IWidget.Parent { get; set; }
-        bool IWidget.IsDirty { get; set; }
-        int IWidget.X { get; set; }
-        int IWidget.Y { get; set; }
-        int IWidget.Width { get; set; }
-        int IWidget.Height { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         public Widget()
 		{
@@ -25,7 +27,7 @@ namespace tw.curses.Widgets
             Children.Add(child);
 		}
 
-        abstract public void Draw();
+        abstract public void Draw(Curses curses);
     }
 }
 

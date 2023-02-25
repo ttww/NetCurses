@@ -9,13 +9,16 @@ namespace tw.curses.Widgets
         List<IWidget>   Children { get; }
 
         bool IsDirty { get; set; }
+
+        int ForegroundColor { get; set; }
+        int BackgroundColor { get; set; }
         int X { get;  set; }
         int Y { get;  set; }
         int Width { get;  set; }
         int Height { get;  set; }
 
         void AddChild(IWidget child);
-		void Draw();
+		void Draw(Curses curses);
 	}
 }
 
